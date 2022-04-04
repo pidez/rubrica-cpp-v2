@@ -1,5 +1,5 @@
 main.exe : main.o rubrica.o voce.o
-		g++ main.o rubrica.o voce.o -o main.exe
+	g++ main.o rubrica.o voce.o -o main.exe
 
 main.o : main.cpp
 	g++ -c main.cpp -o main.o
