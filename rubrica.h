@@ -1,7 +1,19 @@
 #ifndef RUBRICA_H
 #define RUBRICA_H
 
+#include "voce.h"
+
 class rubrica {
+
+public:
+
+	typedef unsigned int size_type; ///< tipo usato per dimensioni della rubrica
+
+private:
+
+	size_type _size;		///< Dimensione corrente della rubrica
+	size_type _capacity;	///< Capacità massima della rubrica
+	voce* _voci;			///< Puntatore all'array di voci
 
 public:
 
@@ -9,7 +21,7 @@ public:
 	*	Costruttore di default.	
 	*	Costruttore che crea una rubrica vuota.
 	*/
-	rurbica();
+	rubrica();
 
 	/**
 	* Distruttore.
@@ -31,6 +43,10 @@ public:
 	*/
 
 	rubrica& operator=(const rubrica& other);
+
+	explicit rubrica(size_type capacity);
+
+	void swap(rubrica& other);
 };
 
 #endif
